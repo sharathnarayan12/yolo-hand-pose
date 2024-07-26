@@ -1,54 +1,59 @@
-# YOLOv8n-Pose Hand Pose Detection
 
-![results](./results/prediction.jpg)
+---
 
-This repository contains the code and resources for a custom hand pose detection model trained using the YOLOv8n-pose framework by [ultralytics](https://www.ultralytics.com/). The model is trained on a custom dataset of hand keypoints available on [Kaggle](https://www.kaggle.com/datasets/riondsilva21/hand-keypoint-dataset-26k).
+# Hand Pose Estimation with YOLO
 
-**Important Note:** Due to computational limitations, the model has only been trained to 50% of its potential. However, it still demonstrates excellent performance.
+This project uses YOLO (You Only Look Once) to perform hand pose estimation. YOLO is a popular object detection algorithm that can be adapted for various tasks, including hand pose estimation. This README provides instructions for setting up the environment and running the hand pose estimation using Conda.
 
-**Project Goal**
+## Prerequisites
 
-The primary objective of this project is to contribute to the development of state-of-the-art (SOTA) models for hand pose detection, specifically targeting applications in sign language classification and AR/VR.
+- Conda (Anaconda or Miniconda)
+- Python 3.7 or later
+- YOLOv5 or YOLOv4 model for hand pose detection
 
+## Setup
 
+### 1. Clone the Repository
 
-**What's Included:**
+First, clone the repository containing the YOLO-based hand pose estimation code.
 
-* Training scripts for the YOLOv8n-pose model on the custom hand keypoint dataset.
-```
-cd ./train
-```
-
-* Pre-trained model weights (50% trained).
-```
-cd ./model
+```bash
+git clone git@github.com:sharathnarayan12/yolo-hand-pose.git
+cd yolo-hand-pose
 ```
 
-* Configuration files and scripts for inference with the trained model.
+### 2. Create a Conda Environment
+
+Create a new Conda environment with the necessary dependencies.
+
+```bash
+conda create -n hand_pose_estimation python=3.8
+conda activate hand_pose_estimation
 ```
-cd ./inference
+
+### 3. Install Dependencies
+
+Install the required packages. The project uses `requirements.txt` to manage Python dependencies.
+
+```bash
+pip install -r requirements.txt
 ```
+### 4. add the YOLO Model to path
+ -  add model path to main python file 
+![alt text](image.png)
+ 
+### 5. Run Hand Pose Estimation
 
-**Future Developments:**
+Execute the script to start hand pose estimation.
 
-* Continue training the model to achieve full capacity and improve accuracy.
-* Explore advanced techniques for hand pose estimation and landmark detection.
-* Integrate the model into sign language classification and AR/VR projects.
+```bash
+cd  detection
+python main.py
+```
+## License
 
-**Contribution**
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
-We welcome contributions from the community to enhance this project. Feel free to:
+---
 
-* Fork the repository and experiment with different training configurations.
-* Implement additional functionalities for hand pose estimation.
-* Share your ideas for integrating the model into sign language and AR/VR applications.
-
-**Let's build better hand pose detection models together!**
-
-![training_graph](./results/results.png)
-
-
-----
-### Follow me
-
->GitHub [@RionDsilvaCS](https://github.com/RionDsilvaCS)  ·  Linkedin [@Rion Dsilva](https://www.linkedin.com/in/rion-dsilva-043464229/)   ·  Twitter [@Rion_Dsilva_CS](https://twitter.com/rion_dsilva_cs)
+Feel free to customize this README based on your project's specifics or additional requirements.
